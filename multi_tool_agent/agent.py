@@ -1,3 +1,5 @@
+#!python
+
 import datetime
 from zoneinfo import ZoneInfo
 from google.adk.agents import Agent
@@ -51,10 +53,19 @@ def get_current_time(city: str) -> dict:
     "report": f"The current time in {city} is {now}.",
   }
 
+def get_list_of_cities() -> list:
+  """Retrieves a list of cities for which the agent can provide information.
+
+  Returns:
+    list: A list of city names.
+  """
+  return ["New York", "Los Angeles", "Chicago", "Madeupville"]
+
 root_agent = Agent(
   name="weather_time_agent",
-  model="gemini-2.0-flash",
+  #model="gemini-2.0-flash",
+  model="gemini-2.0-flash-live-001",
   description="An agent that provides weather and time information.",
-  instruction="You are a helpful agent who can answer questions about the weather and time in a city. Answer each inquiry with a haiku.",
-  tools=[get_weather, get_current_time],
+  instruction="You are a helpful agent who can answer questions about the weather and time in a city. Answer each inquiry with rhyme.",
+  tools=[get_weather, get_current_time, get_list_of_cities],
 )
