@@ -1,0 +1,16 @@
+GOOGLE_GENAI_USE_VERTEXAI=FALSE
+GOOGLE_API_KEY=<ADD YOUR GOOGLE API KEY HERE>
+
+# Configuration settings for file finder agent
+
+# Root directory to search (defaults to home directory if not set)
+ROOT_SEARCH_DIR=~/Documents
+
+# Maximum depth for directory traversal when listing areas/subareas
+MAX_DEPTH=3
+
+# Maximum number of results to return from searches
+MAX_RESULTS=50
+
+# Extensions to include in content searching (plain text files)
+SEARCHABLE_EXTENSIONS=.txt,.md,.csv,.json,.py,.html,.xml,.yaml,.yml,.pdf,.doc,.docx
